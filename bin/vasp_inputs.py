@@ -53,6 +53,10 @@ def incar_opt(cfg, name, solv=False):
         "NCORE": int(cfg["ncore"]),
         "LWAVE": False,
         "LCHARG": False,
+        # 带电/窄带隙体系的电荷 sloshing：默认混合过强会触发
+        # "BRMIX: very serious problems" 并让能量在 SCF 中大幅反弹。
+        "AMIX": cfg.get("amix", 0.1),
+        "BMIX": cfg.get("bmix", 0.0001),
     }
     if solv:
         s = cfg["solvent"]

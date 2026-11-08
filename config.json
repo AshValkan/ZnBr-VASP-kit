@@ -51,6 +51,8 @@
   "allow_overlap": false,
   "launcher": "systemd",
   "lreal": false,
+  "amix": 0.1,
+  "bmix": 0.0001,
   "mem_floor_mb": 6000,
   "conformers_default": 1,
   "conformer_whitelist": [
