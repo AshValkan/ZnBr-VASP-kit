@@ -1,0 +1,42 @@
+# ---- run-time output (never commit) ----
+02_calc/
+results/
+*.out
+*.log
+submit.log
+.submitted
+OUTCAR
+OSZICAR
+vasprun.xml
+XDATCAR
+CONTCAR
+CHG
+CHGCAR
+WAVECAR
+DOSCAR
+EIGENVAL
+PCDAT
+IBZKPT
+REPORT
+PROCAR
+LOCPOT
+vaspout.h5
+
+# ---- working copies / stage dirs from the original host ----
+01_single/
+02_complex/
+03_freq/
+04_aimd/
+05_esp/
+06_bader/
+templates/
+scripts/
+
+# ---- archives & caches ----
+*.tar.gz
+*.tgz
+*.zip
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db

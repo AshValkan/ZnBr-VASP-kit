@@ -1,0 +1,14 @@
+# Everything in this kit is consumed on Linux -- force LF end-to-end.
+* text=auto eol=lf
+
+*.py   text eol=lf
+*.sh   text eol=lf
+*.vasp text eol=lf
+*.md   text eol=lf
+*.json text eol=lf
+*.csv  text eol=lf
+*.xyz  text eol=lf
+*.txt  text eol=lf
+
+*.png binary
+*.pdf binary

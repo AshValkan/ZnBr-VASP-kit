@@ -1,0 +1,64 @@
+{
+  "vasp_std": "~/calc/vasp_std",
+  "vasp_gam": "~/calc/vasp_std",
+  "mpi_cmd": "/usr/local/bin/mpirun --bind-to none",
+  "potcar_dir": "~/calc/VASP-MXenes-alloy/PP",
+  "potcar_map": {
+    "C": "C",
+    "H": "H",
+    "N": "N",
+    "Br": "Br",
+    "O": "O"
+  },
+  "scheduler": "direct",
+  "partition": "normal",
+  "nprocs": 5,
+  "nodes": 1,
+  "max_jobs": 2,
+  "core_blocks": [
+    "0-9",
+    "10-19",
+    "20-29",
+    "30-39"
+  ],
+  "modules": [],
+  "walltime": {
+    "opt": "48:00:00",
+    "opt_sol": "48:00:00",
+    "sp": "08:00:00",
+    "freq": "96:00:00",
+    "aimd": "192:00:00"
+  },
+  "encut": 450,
+  "sigma": 0.05,
+  "ivdw": 12,
+  "ediff": 1e-05,
+  "ediffg": -0.02,
+  "nsw": 300,
+  "ncore": 1,
+  "solvent": {
+    "EB_K": 78.54,
+    "LAMBDA_D_k": 10000,
+    "SIGMA_K": 0.6,
+    "TAU": 0,
+    "NC_K": 0.0001
+  },
+  "aimd": {
+    "temperature": 298,
+    "steps": 10000,
+    "potim": 1
+  },
+  "allow_overlap": false,
+  "launcher": "systemd",
+  "lreal": false,
+  "mem_floor_mb": 6000,
+  "conformers_default": 1,
+  "conformer_whitelist": [
+    "C12TAB_Br3_c2",
+    "C12TAB_Br3_c3",
+    "C12TAB_H2O_c2",
+    "C10TAB_Br3_c2",
+    "C14TAB_Br3_c2",
+    "EMImBr_Br3_c2"
+  ]
+}

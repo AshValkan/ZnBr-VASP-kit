@@ -1,0 +1,69 @@
+case,natoms,species,charge,note
+01_single/C10TAB,44,N C H,1,best of 24 ETKDG/MMFF94
+01_single/C12TAB,50,N C H,1,best of 24 ETKDG/MMFF94
+01_single/C14TAB,56,N C H,1,best of 24 ETKDG/MMFF94
+01_single/MEPBr,24,N C H,1,best of 24 ETKDG/MMFF94
+01_single/TPABr,41,N C H,1,best of 24 ETKDG/MMFF94
+01_single/EMImBr,19,N C H,1,best of 24 ETKDG/MMFF94
+01_single/Br,1,Br,-1,manual internal coords
+01_single/Br3,3,Br,-1,manual internal coords
+01_single/Br5,5,Br,-1,manual internal coords
+01_single/Br2,2,Br,0,manual internal coords
+01_single/H2O,3,H O,0,manual internal coords
+02_complex/C10TAB_Br_c1,45,N C H Br,0,N...Br=3.0
+02_complex/C10TAB_Br_c2,45,N C H Br,0,N...Br=3.4
+02_complex/C10TAB_Br_c3,45,N C H Br,0,N...Br=3.8
+02_complex/C10TAB_Br3_c1,47,N C H Br,0,N...Br=3.0
+02_complex/C10TAB_Br3_c2,47,N C H Br,0,N...Br=3.4
+02_complex/C10TAB_Br3_c3,47,N C H Br,0,N...Br=3.8
+02_complex/C10TAB_Br5_c1,49,N C H Br,0,N...Br=3.0
+02_complex/C10TAB_Br5_c2,49,N C H Br,0,N...Br=3.4
+02_complex/C10TAB_Br5_c3,49,N C H Br,0,N...Br=3.8
+02_complex/C10TAB_Br2_c1,46,N C H Br,1,N...Br=3.0
+02_complex/C10TAB_Br2_c2,46,N C H Br,1,N...Br=3.4
+02_complex/C10TAB_Br2_c3,46,N C H Br,1,N...Br=3.8
+02_complex/C10TAB_H2O_c1,47,N C H O,1,H2O O-toward d=3.0
+02_complex/C10TAB_H2O_c2,47,N C H O,1,H2O O-toward d=3.4
+02_complex/C10TAB_H2O_c3,47,N C H O,1,H2O H-toward d=3.8
+02_complex/C12TAB_Br_c1,51,N C H Br,0,N...Br=3.0
+02_complex/C12TAB_Br_c2,51,N C H Br,0,N...Br=3.4
+02_complex/C12TAB_Br_c3,51,N C H Br,0,N...Br=3.8
+02_complex/C12TAB_Br3_c1,53,N C H Br,0,N...Br=3.0
+02_complex/C12TAB_Br3_c2,53,N C H Br,0,N...Br=3.4
+02_complex/C12TAB_Br3_c3,53,N C H Br,0,N...Br=3.8
+02_complex/C12TAB_Br5_c1,55,N C H Br,0,N...Br=3.0
+02_complex/C12TAB_Br5_c2,55,N C H Br,0,N...Br=3.4
+02_complex/C12TAB_Br5_c3,55,N C H Br,0,N...Br=3.8
+02_complex/C12TAB_Br2_c1,52,N C H Br,1,N...Br=3.0
+02_complex/C12TAB_Br2_c2,52,N C H Br,1,N...Br=3.4
+02_complex/C12TAB_Br2_c3,52,N C H Br,1,N...Br=3.8
+02_complex/C12TAB_H2O_c1,53,N C H O,1,H2O O-toward d=3.0
+02_complex/C12TAB_H2O_c2,53,N C H O,1,H2O O-toward d=3.4
+02_complex/C12TAB_H2O_c3,53,N C H O,1,H2O H-toward d=3.8
+02_complex/C14TAB_Br_c1,57,N C H Br,0,N...Br=3.0
+02_complex/C14TAB_Br_c2,57,N C H Br,0,N...Br=3.4
+02_complex/C14TAB_Br_c3,57,N C H Br,0,N...Br=3.8
+02_complex/C14TAB_Br3_c1,59,N C H Br,0,N...Br=3.0
+02_complex/C14TAB_Br3_c2,59,N C H Br,0,N...Br=3.4
+02_complex/C14TAB_Br3_c3,59,N C H Br,0,N...Br=3.8
+02_complex/C14TAB_Br5_c1,61,N C H Br,0,N...Br=3.0
+02_complex/C14TAB_Br5_c2,61,N C H Br,0,N...Br=3.4
+02_complex/C14TAB_Br5_c3,61,N C H Br,0,N...Br=3.8
+02_complex/C14TAB_Br2_c1,58,N C H Br,1,N...Br=3.0
+02_complex/C14TAB_Br2_c2,58,N C H Br,1,N...Br=3.4
+02_complex/C14TAB_Br2_c3,58,N C H Br,1,N...Br=3.8
+02_complex/C14TAB_H2O_c1,59,N C H O,1,H2O O-toward d=3.0
+02_complex/C14TAB_H2O_c2,59,N C H O,1,H2O O-toward d=3.4
+02_complex/C14TAB_H2O_c3,59,N C H O,1,H2O H-toward d=3.8
+02_complex/MEPBr_Br3_c1,27,N C H Br,0,N...Br=3.0
+02_complex/MEPBr_Br3_c2,27,N C H Br,0,N...Br=3.4
+02_complex/MEPBr_Br3_c3,27,N C H Br,0,N...Br=3.8
+02_complex/TPABr_Br3_c1,44,N C H Br,0,N...Br=3.0
+02_complex/TPABr_Br3_c2,44,N C H Br,0,N...Br=3.4
+02_complex/TPABr_Br3_c3,44,N C H Br,0,N...Br=3.8
+02_complex/EMImBr_Br3_c1,22,N C H Br,0,N...Br=3.0
+02_complex/EMImBr_Br3_c2,22,N C H Br,0,N...Br=3.4
+02_complex/EMImBr_Br3_c3,22,N C H Br,0,N...Br=3.8
+02_complex/EMImBr_H2O_c1,22,N C H O,1,H2O O-toward d=3.0
+02_complex/EMImBr_H2O_c2,22,N C H O,1,H2O O-toward d=3.4
+02_complex/EMImBr_H2O_c3,22,N C H O,1,H2O H-toward d=3.8

@@ -1,0 +1,2214 @@
+{
+ "box": 44.0,
+ "systems": [
+  {
+   "name": "Br",
+   "kind": "anion",
+   "cation": null,
+   "anion": "Br",
+   "charge": -1,
+   "natoms": 1,
+   "box": 44.0,
+   "species": [
+    "Br"
+   ],
+   "counts": [
+    1
+   ],
+   "key": {
+    "N": [],
+    "Br": [
+     0
+    ],
+    "O": []
+   },
+   "file": "00_structures/Br.vasp",
+   "note": "manual internal coords"
+  },
+  {
+   "name": "Br2",
+   "kind": "molecule",
+   "cation": null,
+   "anion": "Br2",
+   "charge": 0,
+   "natoms": 2,
+   "box": 44.0,
+   "species": [
+    "Br"
+   ],
+   "counts": [
+    2
+   ],
+   "key": {
+    "N": [],
+    "Br": [
+     0,
+     1
+    ],
+    "O": []
+   },
+   "file": "00_structures/Br2.vasp",
+   "note": "manual internal coords"
+  },
+  {
+   "name": "Br3",
+   "kind": "anion",
+   "cation": null,
+   "anion": "Br3",
+   "charge": -1,
+   "natoms": 3,
+   "box": 44.0,
+   "species": [
+    "Br"
+   ],
+   "counts": [
+    3
+   ],
+   "key": {
+    "N": [],
+    "Br": [
+     0,
+     1,
+     2
+    ],
+    "O": []
+   },
+   "file": "00_structures/Br3.vasp",
+   "note": "manual internal coords"
+  },
+  {
+   "name": "Br5",
+   "kind": "anion",
+   "cation": null,
+   "anion": "Br5",
+   "charge": -1,
+   "natoms": 5,
+   "box": 44.0,
+   "species": [
+    "Br"
+   ],
+   "counts": [
+    5
+   ],
+   "key": {
+    "N": [],
+    "Br": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "O": []
+   },
+   "file": "00_structures/Br5.vasp",
+   "note": "manual internal coords"
+  },
+  {
+   "name": "C10TAB",
+   "kind": "cation",
+   "cation": "C10TAB",
+   "anion": null,
+   "charge": 1,
+   "natoms": 44,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H"
+   ],
+   "counts": [
+    1,
+    13,
+    30
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [],
+    "O": []
+   },
+   "file": "00_structures/C10TAB.vasp",
+   "note": "best of 24 ETKDG/MMFF94"
+  },
+  {
+   "name": "C12TAB",
+   "kind": "cation",
+   "cation": "C12TAB",
+   "anion": null,
+   "charge": 1,
+   "natoms": 50,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H"
+   ],
+   "counts": [
+    1,
+    15,
+    34
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [],
+    "O": []
+   },
+   "file": "00_structures/C12TAB.vasp",
+   "note": "best of 24 ETKDG/MMFF94"
+  },
+  {
+   "name": "C14TAB",
+   "kind": "cation",
+   "cation": "C14TAB",
+   "anion": null,
+   "charge": 1,
+   "natoms": 56,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H"
+   ],
+   "counts": [
+    1,
+    17,
+    38
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [],
+    "O": []
+   },
+   "file": "00_structures/C14TAB.vasp",
+   "note": "best of 24 ETKDG/MMFF94"
+  },
+  {
+   "name": "EMImBr",
+   "kind": "cation",
+   "cation": "EMImBr",
+   "anion": null,
+   "charge": 1,
+   "natoms": 19,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H"
+   ],
+   "counts": [
+    2,
+    6,
+    11
+   ],
+   "key": {
+    "N": [
+     0,
+     1
+    ],
+    "Br": [],
+    "O": []
+   },
+   "file": "00_structures/EMImBr.vasp",
+   "note": "best of 24 ETKDG/MMFF94"
+  },
+  {
+   "name": "H2O",
+   "kind": "molecule",
+   "cation": null,
+   "anion": "H2O",
+   "charge": 0,
+   "natoms": 3,
+   "box": 44.0,
+   "species": [
+    "H",
+    "O"
+   ],
+   "counts": [
+    2,
+    1
+   ],
+   "key": {
+    "N": [],
+    "Br": [],
+    "O": [
+     2
+    ]
+   },
+   "file": "00_structures/H2O.vasp",
+   "note": "manual internal coords"
+  },
+  {
+   "name": "MEPBr",
+   "kind": "cation",
+   "cation": "MEPBr",
+   "anion": null,
+   "charge": 1,
+   "natoms": 24,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H"
+   ],
+   "counts": [
+    1,
+    7,
+    16
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [],
+    "O": []
+   },
+   "file": "00_structures/MEPBr.vasp",
+   "note": "best of 24 ETKDG/MMFF94"
+  },
+  {
+   "name": "TPABr",
+   "kind": "cation",
+   "cation": "TPABr",
+   "anion": null,
+   "charge": 1,
+   "natoms": 41,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H"
+   ],
+   "counts": [
+    1,
+    12,
+    28
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [],
+    "O": []
+   },
+   "file": "00_structures/TPABr.vasp",
+   "note": "best of 24 ETKDG/MMFF94"
+  },
+  {
+   "name": "C10TAB_Br2_c1",
+   "kind": "complex",
+   "cation": "C10TAB",
+   "anion": "Br2",
+   "charge": 1,
+   "natoms": 46,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    13,
+    30,
+    2
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     44,
+     45
+    ],
+    "O": []
+   },
+   "file": "00_structures/C10TAB_Br2_c1.vasp",
+   "note": "N...Br=3.0"
+  },
+  {
+   "name": "C10TAB_Br2_c2",
+   "kind": "complex",
+   "cation": "C10TAB",
+   "anion": "Br2",
+   "charge": 1,
+   "natoms": 46,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    13,
+    30,
+    2
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     44,
+     45
+    ],
+    "O": []
+   },
+   "file": "00_structures/C10TAB_Br2_c2.vasp",
+   "note": "N...Br=3.4"
+  },
+  {
+   "name": "C10TAB_Br2_c3",
+   "kind": "complex",
+   "cation": "C10TAB",
+   "anion": "Br2",
+   "charge": 1,
+   "natoms": 46,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    13,
+    30,
+    2
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     44,
+     45
+    ],
+    "O": []
+   },
+   "file": "00_structures/C10TAB_Br2_c3.vasp",
+   "note": "N...Br=3.8"
+  },
+  {
+   "name": "C10TAB_Br3_c1",
+   "kind": "complex",
+   "cation": "C10TAB",
+   "anion": "Br3",
+   "charge": 0,
+   "natoms": 47,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    13,
+    30,
+    3
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     44,
+     45,
+     46
+    ],
+    "O": []
+   },
+   "file": "00_structures/C10TAB_Br3_c1.vasp",
+   "note": "N...Br=3.0"
+  },
+  {
+   "name": "C10TAB_Br3_c2",
+   "kind": "complex",
+   "cation": "C10TAB",
+   "anion": "Br3",
+   "charge": 0,
+   "natoms": 47,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    13,
+    30,
+    3
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     44,
+     45,
+     46
+    ],
+    "O": []
+   },
+   "file": "00_structures/C10TAB_Br3_c2.vasp",
+   "note": "N...Br=3.4"
+  },
+  {
+   "name": "C10TAB_Br3_c3",
+   "kind": "complex",
+   "cation": "C10TAB",
+   "anion": "Br3",
+   "charge": 0,
+   "natoms": 47,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    13,
+    30,
+    3
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     44,
+     45,
+     46
+    ],
+    "O": []
+   },
+   "file": "00_structures/C10TAB_Br3_c3.vasp",
+   "note": "N...Br=3.8"
+  },
+  {
+   "name": "C10TAB_Br5_c1",
+   "kind": "complex",
+   "cation": "C10TAB",
+   "anion": "Br5",
+   "charge": 0,
+   "natoms": 49,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    13,
+    30,
+    5
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     44,
+     45,
+     46,
+     47,
+     48
+    ],
+    "O": []
+   },
+   "file": "00_structures/C10TAB_Br5_c1.vasp",
+   "note": "N...Br=3.0"
+  },
+  {
+   "name": "C10TAB_Br5_c2",
+   "kind": "complex",
+   "cation": "C10TAB",
+   "anion": "Br5",
+   "charge": 0,
+   "natoms": 49,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    13,
+    30,
+    5
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     44,
+     45,
+     46,
+     47,
+     48
+    ],
+    "O": []
+   },
+   "file": "00_structures/C10TAB_Br5_c2.vasp",
+   "note": "N...Br=3.4"
+  },
+  {
+   "name": "C10TAB_Br5_c3",
+   "kind": "complex",
+   "cation": "C10TAB",
+   "anion": "Br5",
+   "charge": 0,
+   "natoms": 49,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    13,
+    30,
+    5
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     44,
+     45,
+     46,
+     47,
+     48
+    ],
+    "O": []
+   },
+   "file": "00_structures/C10TAB_Br5_c3.vasp",
+   "note": "N...Br=3.8"
+  },
+  {
+   "name": "C10TAB_Br_c1",
+   "kind": "complex",
+   "cation": "C10TAB",
+   "anion": "Br",
+   "charge": 0,
+   "natoms": 45,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    13,
+    30,
+    1
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     44
+    ],
+    "O": []
+   },
+   "file": "00_structures/C10TAB_Br_c1.vasp",
+   "note": "N...Br=3.0"
+  },
+  {
+   "name": "C10TAB_Br_c2",
+   "kind": "complex",
+   "cation": "C10TAB",
+   "anion": "Br",
+   "charge": 0,
+   "natoms": 45,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    13,
+    30,
+    1
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     44
+    ],
+    "O": []
+   },
+   "file": "00_structures/C10TAB_Br_c2.vasp",
+   "note": "N...Br=3.4"
+  },
+  {
+   "name": "C10TAB_Br_c3",
+   "kind": "complex",
+   "cation": "C10TAB",
+   "anion": "Br",
+   "charge": 0,
+   "natoms": 45,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    13,
+    30,
+    1
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     44
+    ],
+    "O": []
+   },
+   "file": "00_structures/C10TAB_Br_c3.vasp",
+   "note": "N...Br=3.8"
+  },
+  {
+   "name": "C10TAB_H2O_c1",
+   "kind": "complex",
+   "cation": "C10TAB",
+   "anion": "H2O",
+   "charge": 1,
+   "natoms": 47,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "O"
+   ],
+   "counts": [
+    1,
+    13,
+    32,
+    1
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [],
+    "O": [
+     46
+    ]
+   },
+   "file": "00_structures/C10TAB_H2O_c1.vasp",
+   "note": "H2O O-toward d=3.0"
+  },
+  {
+   "name": "C10TAB_H2O_c2",
+   "kind": "complex",
+   "cation": "C10TAB",
+   "anion": "H2O",
+   "charge": 1,
+   "natoms": 47,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "O"
+   ],
+   "counts": [
+    1,
+    13,
+    32,
+    1
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [],
+    "O": [
+     46
+    ]
+   },
+   "file": "00_structures/C10TAB_H2O_c2.vasp",
+   "note": "H2O O-toward d=3.4"
+  },
+  {
+   "name": "C10TAB_H2O_c3",
+   "kind": "complex",
+   "cation": "C10TAB",
+   "anion": "H2O",
+   "charge": 1,
+   "natoms": 47,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "O"
+   ],
+   "counts": [
+    1,
+    13,
+    32,
+    1
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [],
+    "O": [
+     46
+    ]
+   },
+   "file": "00_structures/C10TAB_H2O_c3.vasp",
+   "note": "H2O H-toward d=3.8"
+  },
+  {
+   "name": "C12TAB_Br2_c1",
+   "kind": "complex",
+   "cation": "C12TAB",
+   "anion": "Br2",
+   "charge": 1,
+   "natoms": 52,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    15,
+    34,
+    2
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     50,
+     51
+    ],
+    "O": []
+   },
+   "file": "00_structures/C12TAB_Br2_c1.vasp",
+   "note": "N...Br=3.0"
+  },
+  {
+   "name": "C12TAB_Br2_c2",
+   "kind": "complex",
+   "cation": "C12TAB",
+   "anion": "Br2",
+   "charge": 1,
+   "natoms": 52,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    15,
+    34,
+    2
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     50,
+     51
+    ],
+    "O": []
+   },
+   "file": "00_structures/C12TAB_Br2_c2.vasp",
+   "note": "N...Br=3.4"
+  },
+  {
+   "name": "C12TAB_Br2_c3",
+   "kind": "complex",
+   "cation": "C12TAB",
+   "anion": "Br2",
+   "charge": 1,
+   "natoms": 52,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    15,
+    34,
+    2
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     50,
+     51
+    ],
+    "O": []
+   },
+   "file": "00_structures/C12TAB_Br2_c3.vasp",
+   "note": "N...Br=3.8"
+  },
+  {
+   "name": "C12TAB_Br3_c1",
+   "kind": "complex",
+   "cation": "C12TAB",
+   "anion": "Br3",
+   "charge": 0,
+   "natoms": 53,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    15,
+    34,
+    3
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     50,
+     51,
+     52
+    ],
+    "O": []
+   },
+   "file": "00_structures/C12TAB_Br3_c1.vasp",
+   "note": "N...Br=3.0"
+  },
+  {
+   "name": "C12TAB_Br3_c2",
+   "kind": "complex",
+   "cation": "C12TAB",
+   "anion": "Br3",
+   "charge": 0,
+   "natoms": 53,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    15,
+    34,
+    3
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     50,
+     51,
+     52
+    ],
+    "O": []
+   },
+   "file": "00_structures/C12TAB_Br3_c2.vasp",
+   "note": "N...Br=3.4"
+  },
+  {
+   "name": "C12TAB_Br3_c3",
+   "kind": "complex",
+   "cation": "C12TAB",
+   "anion": "Br3",
+   "charge": 0,
+   "natoms": 53,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    15,
+    34,
+    3
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     50,
+     51,
+     52
+    ],
+    "O": []
+   },
+   "file": "00_structures/C12TAB_Br3_c3.vasp",
+   "note": "N...Br=3.8"
+  },
+  {
+   "name": "C12TAB_Br5_c1",
+   "kind": "complex",
+   "cation": "C12TAB",
+   "anion": "Br5",
+   "charge": 0,
+   "natoms": 55,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    15,
+    34,
+    5
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     50,
+     51,
+     52,
+     53,
+     54
+    ],
+    "O": []
+   },
+   "file": "00_structures/C12TAB_Br5_c1.vasp",
+   "note": "N...Br=3.0"
+  },
+  {
+   "name": "C12TAB_Br5_c2",
+   "kind": "complex",
+   "cation": "C12TAB",
+   "anion": "Br5",
+   "charge": 0,
+   "natoms": 55,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    15,
+    34,
+    5
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     50,
+     51,
+     52,
+     53,
+     54
+    ],
+    "O": []
+   },
+   "file": "00_structures/C12TAB_Br5_c2.vasp",
+   "note": "N...Br=3.4"
+  },
+  {
+   "name": "C12TAB_Br5_c3",
+   "kind": "complex",
+   "cation": "C12TAB",
+   "anion": "Br5",
+   "charge": 0,
+   "natoms": 55,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    15,
+    34,
+    5
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     50,
+     51,
+     52,
+     53,
+     54
+    ],
+    "O": []
+   },
+   "file": "00_structures/C12TAB_Br5_c3.vasp",
+   "note": "N...Br=3.8"
+  },
+  {
+   "name": "C12TAB_Br_c1",
+   "kind": "complex",
+   "cation": "C12TAB",
+   "anion": "Br",
+   "charge": 0,
+   "natoms": 51,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    15,
+    34,
+    1
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     50
+    ],
+    "O": []
+   },
+   "file": "00_structures/C12TAB_Br_c1.vasp",
+   "note": "N...Br=3.0"
+  },
+  {
+   "name": "C12TAB_Br_c2",
+   "kind": "complex",
+   "cation": "C12TAB",
+   "anion": "Br",
+   "charge": 0,
+   "natoms": 51,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    15,
+    34,
+    1
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     50
+    ],
+    "O": []
+   },
+   "file": "00_structures/C12TAB_Br_c2.vasp",
+   "note": "N...Br=3.4"
+  },
+  {
+   "name": "C12TAB_Br_c3",
+   "kind": "complex",
+   "cation": "C12TAB",
+   "anion": "Br",
+   "charge": 0,
+   "natoms": 51,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    15,
+    34,
+    1
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     50
+    ],
+    "O": []
+   },
+   "file": "00_structures/C12TAB_Br_c3.vasp",
+   "note": "N...Br=3.8"
+  },
+  {
+   "name": "C12TAB_H2O_c1",
+   "kind": "complex",
+   "cation": "C12TAB",
+   "anion": "H2O",
+   "charge": 1,
+   "natoms": 53,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "O"
+   ],
+   "counts": [
+    1,
+    15,
+    36,
+    1
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [],
+    "O": [
+     52
+    ]
+   },
+   "file": "00_structures/C12TAB_H2O_c1.vasp",
+   "note": "H2O O-toward d=3.0"
+  },
+  {
+   "name": "C12TAB_H2O_c2",
+   "kind": "complex",
+   "cation": "C12TAB",
+   "anion": "H2O",
+   "charge": 1,
+   "natoms": 53,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "O"
+   ],
+   "counts": [
+    1,
+    15,
+    36,
+    1
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [],
+    "O": [
+     52
+    ]
+   },
+   "file": "00_structures/C12TAB_H2O_c2.vasp",
+   "note": "H2O O-toward d=3.4"
+  },
+  {
+   "name": "C12TAB_H2O_c3",
+   "kind": "complex",
+   "cation": "C12TAB",
+   "anion": "H2O",
+   "charge": 1,
+   "natoms": 53,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "O"
+   ],
+   "counts": [
+    1,
+    15,
+    36,
+    1
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [],
+    "O": [
+     52
+    ]
+   },
+   "file": "00_structures/C12TAB_H2O_c3.vasp",
+   "note": "H2O H-toward d=3.8"
+  },
+  {
+   "name": "C14TAB_Br2_c1",
+   "kind": "complex",
+   "cation": "C14TAB",
+   "anion": "Br2",
+   "charge": 1,
+   "natoms": 58,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    17,
+    38,
+    2
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     56,
+     57
+    ],
+    "O": []
+   },
+   "file": "00_structures/C14TAB_Br2_c1.vasp",
+   "note": "N...Br=3.0"
+  },
+  {
+   "name": "C14TAB_Br2_c2",
+   "kind": "complex",
+   "cation": "C14TAB",
+   "anion": "Br2",
+   "charge": 1,
+   "natoms": 58,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    17,
+    38,
+    2
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     56,
+     57
+    ],
+    "O": []
+   },
+   "file": "00_structures/C14TAB_Br2_c2.vasp",
+   "note": "N...Br=3.4"
+  },
+  {
+   "name": "C14TAB_Br2_c3",
+   "kind": "complex",
+   "cation": "C14TAB",
+   "anion": "Br2",
+   "charge": 1,
+   "natoms": 58,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    17,
+    38,
+    2
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     56,
+     57
+    ],
+    "O": []
+   },
+   "file": "00_structures/C14TAB_Br2_c3.vasp",
+   "note": "N...Br=3.8"
+  },
+  {
+   "name": "C14TAB_Br3_c1",
+   "kind": "complex",
+   "cation": "C14TAB",
+   "anion": "Br3",
+   "charge": 0,
+   "natoms": 59,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    17,
+    38,
+    3
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     56,
+     57,
+     58
+    ],
+    "O": []
+   },
+   "file": "00_structures/C14TAB_Br3_c1.vasp",
+   "note": "N...Br=3.0"
+  },
+  {
+   "name": "C14TAB_Br3_c2",
+   "kind": "complex",
+   "cation": "C14TAB",
+   "anion": "Br3",
+   "charge": 0,
+   "natoms": 59,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    17,
+    38,
+    3
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     56,
+     57,
+     58
+    ],
+    "O": []
+   },
+   "file": "00_structures/C14TAB_Br3_c2.vasp",
+   "note": "N...Br=3.4"
+  },
+  {
+   "name": "C14TAB_Br3_c3",
+   "kind": "complex",
+   "cation": "C14TAB",
+   "anion": "Br3",
+   "charge": 0,
+   "natoms": 59,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    17,
+    38,
+    3
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     56,
+     57,
+     58
+    ],
+    "O": []
+   },
+   "file": "00_structures/C14TAB_Br3_c3.vasp",
+   "note": "N...Br=3.8"
+  },
+  {
+   "name": "C14TAB_Br5_c1",
+   "kind": "complex",
+   "cation": "C14TAB",
+   "anion": "Br5",
+   "charge": 0,
+   "natoms": 61,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    17,
+    38,
+    5
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     56,
+     57,
+     58,
+     59,
+     60
+    ],
+    "O": []
+   },
+   "file": "00_structures/C14TAB_Br5_c1.vasp",
+   "note": "N...Br=3.0"
+  },
+  {
+   "name": "C14TAB_Br5_c2",
+   "kind": "complex",
+   "cation": "C14TAB",
+   "anion": "Br5",
+   "charge": 0,
+   "natoms": 61,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    17,
+    38,
+    5
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     56,
+     57,
+     58,
+     59,
+     60
+    ],
+    "O": []
+   },
+   "file": "00_structures/C14TAB_Br5_c2.vasp",
+   "note": "N...Br=3.4"
+  },
+  {
+   "name": "C14TAB_Br5_c3",
+   "kind": "complex",
+   "cation": "C14TAB",
+   "anion": "Br5",
+   "charge": 0,
+   "natoms": 61,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    17,
+    38,
+    5
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     56,
+     57,
+     58,
+     59,
+     60
+    ],
+    "O": []
+   },
+   "file": "00_structures/C14TAB_Br5_c3.vasp",
+   "note": "N...Br=3.8"
+  },
+  {
+   "name": "C14TAB_Br_c1",
+   "kind": "complex",
+   "cation": "C14TAB",
+   "anion": "Br",
+   "charge": 0,
+   "natoms": 57,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    17,
+    38,
+    1
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     56
+    ],
+    "O": []
+   },
+   "file": "00_structures/C14TAB_Br_c1.vasp",
+   "note": "N...Br=3.0"
+  },
+  {
+   "name": "C14TAB_Br_c2",
+   "kind": "complex",
+   "cation": "C14TAB",
+   "anion": "Br",
+   "charge": 0,
+   "natoms": 57,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    17,
+    38,
+    1
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     56
+    ],
+    "O": []
+   },
+   "file": "00_structures/C14TAB_Br_c2.vasp",
+   "note": "N...Br=3.4"
+  },
+  {
+   "name": "C14TAB_Br_c3",
+   "kind": "complex",
+   "cation": "C14TAB",
+   "anion": "Br",
+   "charge": 0,
+   "natoms": 57,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    17,
+    38,
+    1
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     56
+    ],
+    "O": []
+   },
+   "file": "00_structures/C14TAB_Br_c3.vasp",
+   "note": "N...Br=3.8"
+  },
+  {
+   "name": "C14TAB_H2O_c1",
+   "kind": "complex",
+   "cation": "C14TAB",
+   "anion": "H2O",
+   "charge": 1,
+   "natoms": 59,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "O"
+   ],
+   "counts": [
+    1,
+    17,
+    40,
+    1
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [],
+    "O": [
+     58
+    ]
+   },
+   "file": "00_structures/C14TAB_H2O_c1.vasp",
+   "note": "H2O O-toward d=3.0"
+  },
+  {
+   "name": "C14TAB_H2O_c2",
+   "kind": "complex",
+   "cation": "C14TAB",
+   "anion": "H2O",
+   "charge": 1,
+   "natoms": 59,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "O"
+   ],
+   "counts": [
+    1,
+    17,
+    40,
+    1
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [],
+    "O": [
+     58
+    ]
+   },
+   "file": "00_structures/C14TAB_H2O_c2.vasp",
+   "note": "H2O O-toward d=3.4"
+  },
+  {
+   "name": "C14TAB_H2O_c3",
+   "kind": "complex",
+   "cation": "C14TAB",
+   "anion": "H2O",
+   "charge": 1,
+   "natoms": 59,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "O"
+   ],
+   "counts": [
+    1,
+    17,
+    40,
+    1
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [],
+    "O": [
+     58
+    ]
+   },
+   "file": "00_structures/C14TAB_H2O_c3.vasp",
+   "note": "H2O H-toward d=3.8"
+  },
+  {
+   "name": "EMImBr_Br3_c1",
+   "kind": "complex",
+   "cation": "EMImBr",
+   "anion": "Br3",
+   "charge": 0,
+   "natoms": 22,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    2,
+    6,
+    11,
+    3
+   ],
+   "key": {
+    "N": [
+     0,
+     1
+    ],
+    "Br": [
+     19,
+     20,
+     21
+    ],
+    "O": []
+   },
+   "file": "00_structures/EMImBr_Br3_c1.vasp",
+   "note": "N...Br=3.0"
+  },
+  {
+   "name": "EMImBr_Br3_c2",
+   "kind": "complex",
+   "cation": "EMImBr",
+   "anion": "Br3",
+   "charge": 0,
+   "natoms": 22,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    2,
+    6,
+    11,
+    3
+   ],
+   "key": {
+    "N": [
+     0,
+     1
+    ],
+    "Br": [
+     19,
+     20,
+     21
+    ],
+    "O": []
+   },
+   "file": "00_structures/EMImBr_Br3_c2.vasp",
+   "note": "N...Br=3.4"
+  },
+  {
+   "name": "EMImBr_Br3_c3",
+   "kind": "complex",
+   "cation": "EMImBr",
+   "anion": "Br3",
+   "charge": 0,
+   "natoms": 22,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    2,
+    6,
+    11,
+    3
+   ],
+   "key": {
+    "N": [
+     0,
+     1
+    ],
+    "Br": [
+     19,
+     20,
+     21
+    ],
+    "O": []
+   },
+   "file": "00_structures/EMImBr_Br3_c3.vasp",
+   "note": "N...Br=3.8"
+  },
+  {
+   "name": "EMImBr_H2O_c1",
+   "kind": "complex",
+   "cation": "EMImBr",
+   "anion": "H2O",
+   "charge": 1,
+   "natoms": 22,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "O"
+   ],
+   "counts": [
+    2,
+    6,
+    13,
+    1
+   ],
+   "key": {
+    "N": [
+     0,
+     1
+    ],
+    "Br": [],
+    "O": [
+     21
+    ]
+   },
+   "file": "00_structures/EMImBr_H2O_c1.vasp",
+   "note": "H2O O-toward d=3.0"
+  },
+  {
+   "name": "EMImBr_H2O_c2",
+   "kind": "complex",
+   "cation": "EMImBr",
+   "anion": "H2O",
+   "charge": 1,
+   "natoms": 22,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "O"
+   ],
+   "counts": [
+    2,
+    6,
+    13,
+    1
+   ],
+   "key": {
+    "N": [
+     0,
+     1
+    ],
+    "Br": [],
+    "O": [
+     21
+    ]
+   },
+   "file": "00_structures/EMImBr_H2O_c2.vasp",
+   "note": "H2O O-toward d=3.4"
+  },
+  {
+   "name": "EMImBr_H2O_c3",
+   "kind": "complex",
+   "cation": "EMImBr",
+   "anion": "H2O",
+   "charge": 1,
+   "natoms": 22,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "O"
+   ],
+   "counts": [
+    2,
+    6,
+    13,
+    1
+   ],
+   "key": {
+    "N": [
+     0,
+     1
+    ],
+    "Br": [],
+    "O": [
+     21
+    ]
+   },
+   "file": "00_structures/EMImBr_H2O_c3.vasp",
+   "note": "H2O H-toward d=3.8"
+  },
+  {
+   "name": "MEPBr_Br3_c1",
+   "kind": "complex",
+   "cation": "MEPBr",
+   "anion": "Br3",
+   "charge": 0,
+   "natoms": 27,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    7,
+    16,
+    3
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     24,
+     25,
+     26
+    ],
+    "O": []
+   },
+   "file": "00_structures/MEPBr_Br3_c1.vasp",
+   "note": "N...Br=3.0"
+  },
+  {
+   "name": "MEPBr_Br3_c2",
+   "kind": "complex",
+   "cation": "MEPBr",
+   "anion": "Br3",
+   "charge": 0,
+   "natoms": 27,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    7,
+    16,
+    3
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     24,
+     25,
+     26
+    ],
+    "O": []
+   },
+   "file": "00_structures/MEPBr_Br3_c2.vasp",
+   "note": "N...Br=3.4"
+  },
+  {
+   "name": "MEPBr_Br3_c3",
+   "kind": "complex",
+   "cation": "MEPBr",
+   "anion": "Br3",
+   "charge": 0,
+   "natoms": 27,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    7,
+    16,
+    3
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     24,
+     25,
+     26
+    ],
+    "O": []
+   },
+   "file": "00_structures/MEPBr_Br3_c3.vasp",
+   "note": "N...Br=3.8"
+  },
+  {
+   "name": "TPABr_Br3_c1",
+   "kind": "complex",
+   "cation": "TPABr",
+   "anion": "Br3",
+   "charge": 0,
+   "natoms": 44,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    12,
+    28,
+    3
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     41,
+     42,
+     43
+    ],
+    "O": []
+   },
+   "file": "00_structures/TPABr_Br3_c1.vasp",
+   "note": "N...Br=3.0"
+  },
+  {
+   "name": "TPABr_Br3_c2",
+   "kind": "complex",
+   "cation": "TPABr",
+   "anion": "Br3",
+   "charge": 0,
+   "natoms": 44,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    12,
+    28,
+    3
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     41,
+     42,
+     43
+    ],
+    "O": []
+   },
+   "file": "00_structures/TPABr_Br3_c2.vasp",
+   "note": "N...Br=3.4"
+  },
+  {
+   "name": "TPABr_Br3_c3",
+   "kind": "complex",
+   "cation": "TPABr",
+   "anion": "Br3",
+   "charge": 0,
+   "natoms": 44,
+   "box": 44.0,
+   "species": [
+    "N",
+    "C",
+    "H",
+    "Br"
+   ],
+   "counts": [
+    1,
+    12,
+    28,
+    3
+   ],
+   "key": {
+    "N": [
+     0
+    ],
+    "Br": [
+     41,
+     42,
+     43
+    ],
+    "O": []
+   },
+   "file": "00_structures/TPABr_Br3_c3.vasp",
+   "note": "N...Br=3.8"
+  }
+ ]
+}
