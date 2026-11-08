@@ -1,12 +1,8 @@
 #!/bin/bash
 # ZnBr pipeline automation (cron every 10 min):
-#   memory guard -> submit ready jobs -> collect energies
+#   submit ready jobs -> collect energies
+# 内存守卫已移除（用户要求）：swap 足够，接受内存压力换吞吐。
 cd "$(dirname "$0")" || exit 1
-AVAIL=$(free -m | awk 'NR==2{print $7}')
-echo "=== autorun $(date) avail=${AVAIL}M ===" >> queue.log
-if [ "${AVAIL:-0}" -lt 6000 ]; then
-    echo "memory guard: only ${AVAIL}M available (<6000M), skip submit" >> queue.log
-else
-    /usr/bin/python3 bin/submit.py >> queue.log 2>&1
-fi
+echo "=== autorun $(date) avail=$(free -m | awk 'NR==2{print $7}')M ===" >> queue.log
+/usr/bin/python3 bin/submit.py >> queue.log 2>&1
 /usr/bin/python3 bin/collect_energies.py >> queue.log 2>&1 || true

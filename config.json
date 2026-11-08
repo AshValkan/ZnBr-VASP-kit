@@ -53,7 +53,7 @@
   "lreal": false,
   "amix": 0.1,
   "bmix": 0.0001,
-  "mem_floor_mb": 6000,
+  "mem_floor_mb": 0,
   "conformers_default": 1,
   "conformer_whitelist": [
     "C12TAB_Br3_c2",
