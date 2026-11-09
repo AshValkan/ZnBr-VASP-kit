@@ -1,6 +1,6 @@
 # Zn–Br VASP Kit
 
-水系锌溴电池理论计算工具链（VASP 6.4.2 · PBE + D3(BJ) · VASPsol）。
+水系锌溴电池理论计算工具链（VASP · PBE + D3(BJ) · VASPsol）。
 config 驱动、manifest 驱动：68 个体系（11 单体 + 57 复合物构象）从结构到能量到分析一条流水线。
 
 ## 目录
