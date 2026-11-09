@@ -30,7 +30,7 @@ results/           汇总输出（collect_energies / plot_results 生成）
 | `submit.py` | 批量提交：三态队列（只提交 fresh）、并发上限按实际进程数、`--dry-run` 预览、direct 模式核块分配 |
 | `status.py` | 一屏进度（done / partial / fresh + 运行中）；`--brief` 供轮询脚本调用 |
 | `regen_jobsh.py` | 按当前模板重写全部 `job.sh`（自动跳过正在运行的目录） |
-| `pin_ranks.sh` | 由 `job.sh` 调用：把每个 rank 钉到核块内一对连续 CPU |
+| `pin_ranks.sh` | 由 `job.sh` 调用：把每个 rank 钉到节点内连续 CPU |
 | `prepare_next.py` | 阶段链：opt CONTCAR → sp / freq / aimd |
 | `collect_energies.py` | Eb（真空+溶剂）+ 交换能 + 水竞争 + `results/eb.md` |
 | `freq_thermo.py` | 频率 → 零点/熵/自由能校正 |
