@@ -122,7 +122,7 @@ def queue_key(name):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--tasks", default="opt,opt_sol")
+    ap.add_argument("--tasks", default="opt,sp_vac")
     ap.add_argument("--max", type=int, default=None)
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--force", action="store_true")
