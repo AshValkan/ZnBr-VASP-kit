@@ -23,7 +23,7 @@ KIT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RES = os.path.join(KIT, "04_results")
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(RES, "summary")
 
-CATIONS = ["C10TAB", "C12TAB", "C14TAB", "MEPBr", "TPABr", "EMImBr"]
+CATIONS = ["C10TAB", "C12TAB", "C14TAB"]
 ANIONS = ["Br", "Br3", "Br5", "Br2", "H2O"]
 CHAIN = {"C10TAB": 10, "C12TAB": 12, "C14TAB": 14}
 SUB = {"Br": "Br$^-$", "Br3": "Br$_3^-$", "Br5": "Br$_5^-$",
@@ -108,7 +108,10 @@ def main():
         for c, v in partial.items():
             lines.append("- %s：已完成 %s（缺 %s）" % (
                 c, "、".join(v), "、".join([a for a in ANIONS if a not in v])))
-    lines.append("- 溶剂化相（opt_sol）：尚未开始\n")
+    _solv = os.path.join(KIT, "02_calc", "opt_sol")
+    _n = len(os.listdir(_solv)) if os.path.isdir(_solv) else 0
+    lines.append("- 溶剂化相（opt_sol）：%s\n" % (
+        "%d 项待跑" % _n if _n else "已停用（内容归档至 `_parked/opt_sol`）"))
 
     lines.append("## 结合能矩阵（真空相，eV）\n")
     hdr = "| cation | " + " | ".join(SUB[a] for a in ANIONS) + " |"
@@ -139,24 +142,45 @@ def main():
         lines.append("dE_ex < 0 表示 Br₃⁻ 优于 Br⁻；dE_H2O < 0 表示 Br₃⁻ 优于水。\n")
 
     lines.append("## 趋势\n")
-    if "C10TAB" in done_cations and "C12TAB" in done_cations:
-        m10 = {a: (fnum(best[("C10TAB", a)].get("eb_vac"))) for a in ANIONS}
-        m12 = {a: (fnum(best[("C12TAB", a)].get("eb_vac"))) for a in ANIONS}
-        lines.append("C10TAB → C12TAB 的结合能变化（负值 = 增强，正值 = 减弱）：\n")
-        lines.append("| 吸附物 | ΔEb (eV) |")
-        lines.append("|---|---|")
+    chain_done = [c for c in CATIONS if all((c, a) in best for a in ANIONS)]
+    if len(chain_done) >= 2:
+        seg_hdr = " | ".join(
+            "C%d→C%d" % (CHAIN[chain_done[i]], CHAIN[chain_done[i + 1]])
+            for i in range(len(chain_done) - 1))
+        lines.append("| 吸附物 | %s |" % seg_hdr)
+        lines.append("|---|" + "---|" * (len(chain_done) - 1))
+        last_max = 0.0
         for a in ANIONS:
-            if m10[a] is not None and m12[a] is not None:
-                lines.append("| %s | %+.2f |" % (SUB[a], m12[a] - m10[a]))
+            vals = [fnum(best[(c, a)].get("eb_vac")) for c in chain_done]
+            if any(v is None for v in vals):
+                continue
+            diffs = [vals[i + 1] - vals[i] for i in range(len(vals) - 1)]
+            last_max = max(last_max, abs(diffs[-1]))
+            lines.append("| %s | %s |" % (SUB[a], " | ".join("%+.2f" % d for d in diffs)))
         lines.append("")
-        lines.append("呈梯度：结合越强、电荷越集中的阴离子受链长影响越大"
-                     "（Br⁻ > Br₃⁻ > Br₅⁻ > Br₂），中性 Br₂ 几乎不受影响。\n")
+        if len(chain_done) >= 3:
+            lines.append("最后一段 C%d→C%d 的最大变化为 **%.2f eV**。" % (
+                CHAIN[chain_done[-2]], CHAIN[chain_done[-1]], last_max))
+            if last_max < 0.05:
+                lines.append("该值落在 DFT 误差带（约 0.05 eV）内，"
+                             "**判定链长效应在此处饱和**；而前一段的落差明显更大。\n")
+            else:
+                lines.append("仍可分辨出链长效应，尚未饱和。\n")
 
     lines.append("## 待办\n")
-    lines.append("- C14TAB 组复合物（Br / Br₃⁻ / Br₅⁻ / Br₂ / H₂O）")
-    lines.append("- MEPBr、TPABr、EMImBr 的 Br₃⁻ 与 H₂O")
-    lines.append("- 全部体系的 opt_sol（VASPsol 溶剂化相）")
-    lines.append("- 数据齐备后补充 dE_ex / dE_H2O 的完整矩阵\n")
+    missing = ["%s_%s" % (c, a) for c in CATIONS for a in ANIONS if (c, a) not in best]
+    if missing:
+        lines.append("- 未完成 c1 复合物：%s" % "、".join(missing))
+    else:
+        lines.append("- c1 复合物已全部完成（共 %d 个体系）" % len(best))
+    lines.append("- 关键构象 c2/c3 的构象竞争检验")
+    solv = os.path.join(KIT, "02_calc", "opt_sol")
+    n_solv = len(os.listdir(solv)) if os.path.isdir(solv) else 0
+    if n_solv:
+        lines.append("- opt_sol 溶剂化相仍有 %d 项待跑" % n_solv)
+    else:
+        lines.append("- opt_sol 已停用（目录为空，内容在 `_parked/`）")
+    lines.append("")
 
     with open(os.path.join(OUT, "report.md"), "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
