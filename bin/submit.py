@@ -6,8 +6,8 @@
     python3 bin/submit.py --tasks sp_vac,freq --max 30
 
 Adds a "direct" scheduler for standalone hosts (no Slurm): picks a free
-taskset core block per job, launches it in the background with JOB_CORES
-set, and records the block in .submitted.
+launches each ready case in the background
+set, and records the submission in .submitted.
 """
 
 import argparse
@@ -31,52 +31,12 @@ def _ranges_to_set(s):
     return out
 
 
-def vasp_rank_masks():
-    """CPU affinity masks of running vasp_std ranks (taskset exec()s into
-    prterun, so /proc is the only reliable source)."""
-    import glob
-    masks = []
-    for p in glob.glob("/proc/[0-9]*"):
-        try:
-            with open(os.path.join(p, "comm"), encoding="ascii", errors="ignore") as f:
-                if f.read().strip() != "vasp_std":
-                    continue
-            with open(os.path.join(p, "status"), encoding="ascii", errors="ignore") as f:
-                for ln in f:
-                    if ln.startswith("Cpus_allowed_list"):
-                        masks.append(_ranges_to_set(ln.split("\t")[-1].strip()))
-                        break
-        except Exception:
-            continue
-    return masks
-
-
-def block_usage(cfg):
-    """[(block, nranks)] -- ranks whose affinity mask intersects each block."""
-    usage = []
-    masks = vasp_rank_masks()
-    for b in cfg.get("core_blocks") or []:
-        s = _ranges_to_set(b)
-        usage.append((b, sum(1 for m in masks if m & s)))
-    return usage
-
-
-def free_blocks(cfg, extra_busy=()):
-    """Blocks with zero vasp ranks; extra_busy = blocks claimed this run."""
-    if not (cfg.get("core_blocks") or []):
-        return [None]
-    claimed = set(extra_busy)
-    return [b for b, n in block_usage(cfg) if n == 0 and b not in claimed]
-
-
-def launch_direct(cfg, d, block, dry):
+def launch_direct(cfg, d, dry):
     env = dict(os.environ)
-    if block:
-        env["JOB_CORES"] = block
     cmd = ["bash", "job.sh"]
     if dry:
-        print("[dry] cd %s && JOB_CORES=%s bash job.sh (background)"
-              % (os.path.relpath(d, common.KIT), block))
+        print("[dry] cd %s && bash job.sh (background)"
+              % os.path.relpath(d, common.KIT))
         return "dry"
     log = open(os.path.join(d, "submit.log"), "a", encoding="utf-8")
     if cfg.get("launcher") == "systemd":
@@ -87,8 +47,6 @@ def launch_direct(cfg, d, block, dry):
                 "--working-directory", d,
                 "--setenv=HOME=%s" % os.path.expanduser("~"),
                 "--setenv=PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin"]
-        if block:
-            cmd2.append("--setenv=JOB_CORES=%s" % block)
         cmd2 += ["bash", "job.sh"]
         r = subprocess.run(cmd2, stdout=log, stderr=log, env=env)
         return "unit %s" % unit if r.returncode == 0 else "systemd-run FAILED rc=%d" % r.returncode
@@ -140,13 +98,9 @@ def main():
     active = common.active_jobs()
     room = max(0, max_jobs - active)
     print("queue: %d running, %d slots free (max %d)" % (active, room, max_jobs))
-    if sched == "direct" and room > 0:
-        fb = free_blocks(cfg)
-        print("core blocks: free=%s" % (fb or ["<none>"]))
 
     tasks = [t.strip() for t in args.tasks.split(",") if t.strip()]
     submitted = 0
-    locally_assigned = []   # track blocks picked this run (async start race)
 
     # pre-pass: conformer policy + case state (fresh / partial / done)
     wl = cfg.get("conformer_whitelist") or []
@@ -207,23 +161,8 @@ def main():
                 print("memory floor reached (avail %d MB < %d MB); stopping" % (avail, floor))
                 return
             if sched == "direct":
-                usage = dict(block_usage(cfg))
-                for b in locally_assigned:
-                    usage[b] = usage.get(b, 0) + int(cfg.get("nprocs", 1))
-                free = [b for b in usage if usage[b] == 0]
-                if free:
-                    block = free[0]
-                elif usage and cfg.get("allow_overlap", False):
-                    # run freely: share the least-loaded block instead of stalling
-                    block = min(usage, key=lambda b: usage[b])
-                elif usage:
-                    print("no free core block; stopping")
-                    return
-                else:
-                    block = None
-                locally_assigned.append(block)
-                tag = launch_direct(cfg, d, block, args.dry_run)
-                info = "block %s %s" % (block, tag)
+                tag = launch_direct(cfg, d, args.dry_run)
+                info = "direct %s" % tag
             else:
                 cmd = {"slurm": ["sbatch", "job.sh"],
                        "pbs": ["qsub", "job.sh"]}.get(sched, ["bash", "job.sh"])

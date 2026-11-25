@@ -116,25 +116,13 @@ def survey(cfg):
 
 def brief(jobs, counts, manual, skipped):
     for j in jobs:
-        print("job %-28s ionic=%-4d ranks=%-2d phys_cores=%s"
-              % (j["rel"], j["ionic"], j["ranks"], j["cores"]))
+        print("job %-28s ionic=%-4d ranks=%-2d"
+              % (j["rel"], j["ionic"], j["ranks"]))
         if j["ionic"] >= 60:
             print("ZNBR_SLOW (%s at %d ionic steps, flat-PES drift -> "
                   "consider IBRION=1 or EDIFFG -0.08)" % (j["rel"], j["ionic"]))
 
-    overlap = []
-    for i in range(len(jobs)):
-        for k in range(i + 1, len(jobs)):
-            c = set(jobs[i]["cores"]) & set(jobs[k]["cores"])
-            if c:
-                overlap.append((jobs[i]["rel"], jobs[k]["rel"], sorted(c)))
-    if overlap:
-        for a, b, c in overlap:
-            print("CPU_OVERLAP %s <-> %s share physical cores %s" % (a, b, c))
-    else:
-        used = sum(len(j["cores"]) for j in jobs)
-        print("cpu binding: OK (%d jobs, %d physical cores, no overlap)"
-              % (len(jobs), used))
+    # 已移除 taskset 绑核，所有进程继承完整 CPU 集，重叠检测不再有意义
 
     print("scope %d: done %d | partial %d (manual) | fresh %d   [%d c2/c3 skipped]"
           % (sum(counts.values()), counts["done"], counts["partial"],

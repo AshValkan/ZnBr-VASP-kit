@@ -81,11 +81,19 @@ def _common(cfg, name):
     }
 
 
-def incar_sp(cfg, name, solv=False, locpot=True):
+def incar_sp(cfg, name, solv=False, locpot=True, aeccar=False):
     d = _common(cfg, name)
+    # LAECHG 会让 32 Å 大盒子的 FFT 网格加密约 9 倍：单体系产物 ~9 GB、SCF 慢 9 倍。
+    # 只有做 Bader 电荷分析才需要 AECCAR，ESP 统计只用 LOCPOT + CHGCAR，故默认关闭。
     d.update({"IBRION": -1, "NSW": 0, "EDIFF": "1E-6",
-              "LCHARG": True, "LAECHG": True,
-              "LVTOT": bool(locpot), "LVHAR": False})
+              "LCHARG": True, "LAECHG": bool(aeccar),
+              "LVTOT": bool(locpot), "LVHAR": False,
+              # 单点把 band 分给 5 个 rank（与 -np 5 一致）；几何优化仍用 config 的 ncore
+              "NCORE": 5})
+    if not aeccar:
+        # 32 Å 盒子下 VASP 默认把写文件的网格加密到 NGX*2（448³），LOCPOT 达 719 MB。
+        # ESP 统计只需 224³（0.14 Å 间距）即可解析 ρ=1e-3 等值面，故压回计算网格。
+        d.update({"NGXF": 224, "NGYF": 224, "NGZF": 224})
     if solv:
         s = cfg["solvent"]
         d.update({"LSOL": True, "EB_K": s["EB_K"], "LAMBDA_D_k": s["LAMBDA_D_k"],
@@ -190,7 +198,7 @@ cd "$(dirname "$0")"
 export LD_LIBRARY_PATH=$HOME/calc/pmix-5.0.1/lib:/usr/local/lib:$LD_LIBRARY_PATH
 export PATH=/usr/local/bin:$PATH
 export OMP_NUM_THREADS=1
-echo "start $(date)  cores=${{JOB_CORES:-none}}  supervisor=$$  $(pwd)"
+echo "start $(date)  supervisor=$$  $(pwd)"
 
 # Supervised loop: VASP has been observed to die right after an ionic step
 # (twice, no OOM / no systemd event).  Restarting it blindly used to throw away
@@ -209,16 +217,10 @@ while [ $attempt -lt $max_attempts ]; do
     fi
     [ $attempt -gt 1 ] && [ -f vasp.out ] && mv -f vasp.out "vasp.out.attempt$((attempt-1))"
     echo "attempt $attempt: launch $(date)"
-    if [ -n "$JOB_CORES" ]; then
-        taskset -c "$JOB_CORES" {mpi} -np {np} {vasp} > vasp.out 2>&1 &
-        MPI_PID=$!
-        timeout 180 bash "$HOME/calc/ZnBr/bin/pin_ranks.sh" "$JOB_CORES" {np} > pin.log 2>&1 &
-        wait $MPI_PID
-        rc=$?
-    else
-        {mpi} -np {np} {vasp} > vasp.out 2>&1
-        rc=$?
-    fi
+    # 不绑核：实测 taskset 只能约束 WSL 的 vCPU 编号，无法控制物理 socket
+    # （Hyper-V 自行调度 vCPU 落在哪个物理核），绑定的收益不确定，故放开。
+    {mpi} -np {np} {vasp} > vasp.out 2>&1
+    rc=$?
     echo "attempt $attempt: vasp exit rc=$rc $(date)"
     if grep -q 'reached required accuracy' OUTCAR 2>/dev/null; then
         echo "converged after $attempt attempt(s)"
