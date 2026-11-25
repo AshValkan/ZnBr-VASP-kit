@@ -188,7 +188,7 @@ def run_state(d):
     to the operator so an unattended run can never redo work in progress.
     """
     e = outcar_energy(os.path.join(d, "OUTCAR"))
-    if e and e["converged"]:
+    if e and (e["converged"] or e["finished"]):
         return "done"
     if os.path.exists(os.path.join(d, ".submitted")):
         return "partial"
