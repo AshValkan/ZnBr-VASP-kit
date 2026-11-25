@@ -182,8 +182,6 @@ def job_script(cfg, name, task):
     sched = cfg.get("scheduler", "direct").lower()
     if sched == "local":      # alias kept for the upstream kit / smoke test
         sched = "direct"
-    if sched == "local":      # alias kept for the upstream kit / smoke test
-        sched = "direct"
     vasp = cfg["vasp_gam"]   # every task here is Gamma-only
     if sched == "direct":
         mpi = cfg.get("mpi_cmd", "mpirun --bind-to none")
@@ -200,11 +198,23 @@ echo "start $(date)  supervisor=$$  $(pwd)"
 # Supervised loop: VASP has been observed to die right after an ionic step
 # (twice, no OOM / no systemd event).  Restarting it blindly used to throw away
 # the whole run, so every attempt first rewinds to the last CONTCAR.
+#
+# A run counts as finished on EITHER of two conditions:
+#   * 'reached required accuracy'  -- relaxation converged (IBRION>0)
+#   * 'General timing and accounting' -- VASP exited normally (IBRION=-1 / NSW=0)
+# Static single points never print the convergence line, so testing for it alone
+# made every sp_vac job look unfinished and restart itself up to max_attempts.
+finished() {{
+    grep -q 'reached required accuracy' OUTCAR 2>/dev/null && return 0
+    grep -q 'General timing and accounting' OUTCAR 2>/dev/null && return 0
+    return 1
+}}
+
 attempt=0
 max_attempts=30
 while [ $attempt -lt $max_attempts ]; do
     attempt=$((attempt+1))
-    if [ -s CONTCAR ] && ! grep -q 'reached required accuracy' OUTCAR 2>/dev/null; then
+    if [ -s CONTCAR ] && ! finished; then
         nat=$(awk 'NR==7{{s=0; for(i=1;i<=NF;i++) s+=$i; print s}}' POSCAR)
         lines=$(wc -l < CONTCAR)
         if [ -n "$nat" ] && [ "$lines" -ge $((nat+8)) ]; then
@@ -217,8 +227,8 @@ while [ $attempt -lt $max_attempts ]; do
     {mpi} -np {np} {vasp} > vasp.out 2>&1
     rc=$?
     echo "attempt $attempt: vasp exit rc=$rc $(date)"
-    if grep -q 'reached required accuracy' OUTCAR 2>/dev/null; then
-        echo "converged after $attempt attempt(s)"
+    if finished; then
+        echo "finished after $attempt attempt(s)"
         break
     fi
     sleep 5

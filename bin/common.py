@@ -179,14 +179,13 @@ RUN_MARKERS = ("OUTCAR", "OSZICAR", "CONTCAR", "vasp.out", "vasprun.xml",
 def run_state(d):
     """Classify a relaxation case directory: 'done' / 'partial' / 'fresh'.
 
-    done    : OUTCAR reports 'reached required accuracy'
+    done    : OUTCAR reports completion -- 'reached required accuracy' for a
+              relaxation, or 'General timing and accounting' for a static run
     partial : started at least once (submission marker or any run artefact)
     fresh   : input files only, never launched
 
     Only 'fresh' cases may be submitted automatically; 'partial' ones are left
     to the operator so an unattended run can never redo work in progress.
-    (Single-point tasks never print the convergence line, so they always read
-    as 'partial' -- submit.py only queues opt/opt_sol, which is intended.)
     """
     e = outcar_energy(os.path.join(d, "OUTCAR"))
     if e and e["converged"]:
