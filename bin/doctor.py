@@ -83,6 +83,13 @@ def main():
         check("numpy", True)
     except ImportError:
         check("numpy", False, "pip install numpy  (needed by analysis scripts)", warn_only=True)
+
+    # 6. Bader toolchain (only needed for the LAECHG=True subset)
+    bader_bin = os.path.expanduser("~/calc/bin/bader")
+    check("bader binary: %s" % bader_bin, os.path.exists(bader_bin),
+          "compile from theory.cm.utexas.edu/henkelman/code/bader", warn_only=True)
+    check("bin/chgsum.py", os.path.exists(os.path.join(common.KIT, "bin", "chgsum.py")),
+          "missing helper for AECCAR0+AECCAR2", warn_only=True)
     try:
         import rdkit  # noqa
         check("rdkit (structure regeneration only)", True)
