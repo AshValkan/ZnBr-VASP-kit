@@ -3,8 +3,8 @@
 """INCAR / KPOINTS / job-script builders.
 
 Adds NELECT/ISPIN auto handling (charged anion / cation systems) and a
-"direct" scheduler template for standalone hosts (MPI --bind-to none +
-taskset core block + per-rank pinning, no Slurm).
+"direct" scheduler template for standalone hosts (plain MPI --bind-to none,
+no Slurm, no CPU binding).
 """
 
 import os
@@ -188,11 +188,8 @@ def job_script(cfg, name, task):
     if sched == "direct":
         mpi = cfg.get("mpi_cmd", "mpirun --bind-to none")
         vasp_sh = cfg["vasp_gam"]
-        # NOTE: mpirun must NOT do the binding itself.  PRRTE builds its map from
-        # the whole-machine topology and ignores the taskset mask, so a job
-        # restricted to 10-19 still lands on cores 0-9 -- two concurrent jobs then
-        # share the same physical cores.  Instead: taskset confines every rank to
-        # the block, and pin_ranks.sh spreads one rank per physical core inside it.
+        # NOTE: mpirun runs with --bind-to none, so the OS scheduler owns rank
+        # placement.  Concurrency is governed by max_jobs alone.
         return """#!/bin/bash
 cd "$(dirname "$0")"
 export LD_LIBRARY_PATH=$HOME/calc/pmix-5.0.1/lib:/usr/local/lib:$LD_LIBRARY_PATH
@@ -217,8 +214,6 @@ while [ $attempt -lt $max_attempts ]; do
     fi
     [ $attempt -gt 1 ] && [ -f vasp.out ] && mv -f vasp.out "vasp.out.attempt$((attempt-1))"
     echo "attempt $attempt: launch $(date)"
-    # 不绑核：实测 taskset 只能约束 WSL 的 vCPU 编号，无法控制物理 socket
-    # （Hyper-V 自行调度 vCPU 落在哪个物理核），绑定的收益不确定，故放开。
     {mpi} -np {np} {vasp} > vasp.out 2>&1
     rc=$?
     echo "attempt $attempt: vasp exit rc=$rc $(date)"

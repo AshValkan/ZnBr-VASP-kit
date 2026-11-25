@@ -68,14 +68,14 @@ def main():
     else:
         check("potcar_dir: %s" % pp, False, "edit config.json -> potcar_dir")
 
-    # 4. scheduler sanity
-    blocks = cfg.get("core_blocks") or []
+    # 4. scheduler sanity（并发只由 max_jobs 控制，不做任何 CPU 绑定）
     nproc = os.cpu_count() or 1
     if cfg.get("scheduler") == "direct":
-        ok_blocks = all(max(_rng(b)) < nproc for b in blocks) if blocks else False
-        check("core_blocks within %d cpus: %s" % (nproc, blocks), ok_blocks or not blocks,
-              "core_blocks exceed cpu count")
-        check("max_jobs=%s, allow_overlap=%s" % (cfg.get("max_jobs"), cfg.get("allow_overlap")), True)
+        njobs = int(cfg.get("max_jobs", 2))
+        np_ = int(cfg.get("nprocs", 1))
+        check("max_jobs=%d x nprocs=%d (cpus=%d)" % (njobs, np_, nproc),
+              njobs * np_ <= nproc * 2,
+              "ranks exceed 2x cpu count -- expect heavy oversubscription")
 
     # 5. python deps
     try:
@@ -92,13 +92,13 @@ def main():
     # 6. run dirs
     has_runs = os.path.isdir(os.path.join(common.KIT, "02_calc"))
     check("02_calc run dirs %s" % ("(built)" if has_runs else "(not built yet)"), True,
-          "" if has_runs else "run: python3 bin/make_inputs.py --tasks opt,opt_sol")
+          "" if has_runs else "run: python3 bin/make_inputs.py --tasks opt,sp_vac")
 
     print("\n%d PASS, %d WARN, %d FAIL" % (len(OKS), len(WARNS), len(FAILS)))
     if FAILS:
         print("NOT READY - fix the FAIL items above.")
         return 1
-    print("READY.  quickstart:  bash run.sh   ->   python3 bin/submit.py --tasks opt,opt_sol")
+    print("READY.  quickstart:  bash run.sh   ->   python3 bin/submit.py --tasks opt,sp_vac")
     return 0
 
 

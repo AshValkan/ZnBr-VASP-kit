@@ -122,7 +122,7 @@ def brief(jobs, counts, manual, skipped):
             print("ZNBR_SLOW (%s at %d ionic steps, flat-PES drift -> "
                   "consider IBRION=1 or EDIFFG -0.08)" % (j["rel"], j["ionic"]))
 
-    # 已移除 taskset 绑核，所有进程继承完整 CPU 集，重叠检测不再有意义
+    # 并发只由 max_jobs 决定，进程的 CPU 亲和性交给系统调度
 
     print("scope %d: done %d | partial %d (manual) | fresh %d   [%d c2/c3 skipped]"
           % (sum(counts.values()), counts["done"], counts["partial"],

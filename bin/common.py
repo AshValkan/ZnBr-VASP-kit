@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 """Shared helpers: config, POSCAR I/O, OUTCAR parsing.  Stdlib only.
 
-Runs on a standalone Linux host: direct scheduler (MPI + taskset core blocks,
-no Slurm) plus NELECT/ISPIN auto handling.
+Runs on a standalone Linux host: direct scheduler (plain MPI, no Slurm, no
+CPU binding -- the OS scheduler owns placement) plus NELECT/ISPIN auto handling.
 """
 
 import json
@@ -24,8 +24,7 @@ DEFAULT_CONFIG = {
     "partition": "normal",
     "nprocs": 5,
     "nodes": 1,
-    "max_jobs": 4,
-    "core_blocks": ["0-9", "10-19", "20-29", "30-39"],
+    "max_jobs": 5,
     "modules": [],
     "walltime": {"opt": "48:00:00", "opt_sol": "48:00:00",
                  "sp": "08:00:00", "freq": "96:00:00", "aimd": "192:00:00"},

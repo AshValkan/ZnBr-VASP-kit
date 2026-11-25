@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """Submit ready calculations, honouring a global queue limit.
 
-    python3 bin/submit.py --tasks opt,opt_sol --dry-run
+    python3 bin/submit.py --tasks opt,sp_vac --dry-run
     python3 bin/submit.py --tasks sp_vac,freq --max 30
 
 Adds a "direct" scheduler for standalone hosts (no Slurm): picks a free
