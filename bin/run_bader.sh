@@ -20,12 +20,15 @@ if ! command -v bader >/dev/null 2>&1; then
 fi
 
 if [ "${1:-}" = "--all-bader" ]; then
-    set -- "$KIT"/02_calc/sp_vac/C10TAB_Br3_c1 \
-           "$KIT"/02_calc/sp_vac/C12TAB_Br3_c2 \
-           "$KIT"/02_calc/sp_vac/C14TAB_Br3_c1 \
-           "$KIT"/_hold_bader/C10TAB_Br3_c1 \
-           "$KIT"/_hold_bader/C12TAB_Br3_c2 \
-           "$KIT"/_hold_bader/C14TAB_Br3_c1
+    # 只收实际存在、且确实带 AECCAR 的目录；_hold_bader 里的已归位
+    set --
+    for c in C10TAB_Br3_c1 C12TAB_Br3_c2 C14TAB_Br3_c1; do
+        for base in "$KIT/02_calc/sp_vac" "$KIT/_hold_bader"; do
+            if [ -f "$base/$c/AECCAR2" ]; then
+                set -- "$@" "$base/$c"
+            fi
+        done
+    done
 fi
 
 if [ $# -eq 0 ]; then
@@ -47,6 +50,12 @@ for d in "$@"; do
     if [ -n "$missing" ]; then
         echo "  skip: 缺少$missing（该案例可能不是 LAECHG=.TRUE. 跑的）"
         fail=$((fail + 1))
+        continue
+    fi
+
+    # 已有结果就跳过：一次重算要 15–20 分钟，重复跑纯属浪费
+    if [ -s "$d/ACF.dat" ] && [ "$d/ACF.dat" -nt "$d/AECCAR2" ]; then
+        echo "  skip: ACF.dat 已存在（$(stat -c '%y' "$d/ACF.dat" | cut -c1-16)）；要重算请先删掉它"
         continue
     fi
 
